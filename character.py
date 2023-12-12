@@ -20,13 +20,21 @@ class Weapon:
 	UNARMED_POWER = 20
 	
 	# TODO: __init__
-	
-	# TODO: Propriétés
+	def __init__(self, name, power, min_level):
+		self.__name = name
+		self.power = power
+		self.min_level = min_level
 
+	# TODO: Propriétés
+	@property
+	def name(self):
+		return self.__name
+	
 	# TODO: use
 	def use(self, user, opponent):
 		# TODO: Caculer et appliquer le dommage en utilisant la méthode compute_damage
 		#damage, crit = ...
+		damage = pass
 		msg = ""
 		if crit:
 			msg += "Critical hit! "
@@ -36,6 +44,9 @@ class Weapon:
 	# TODO: compute_damage
 
 	# TODO: make_unarmed
+	@classmethod
+	def make_unarmed(cls):
+		return cls('Unarmed', 20, 1)
 
 
 class Character:
@@ -50,6 +61,9 @@ class Character:
 	"""
 	
 	# TODO: __init__
+	def __ini__(self, name, max_hp, attack, defense, level):
+		self.__name = name
+
 	
 	# TODO: Propriétés
 
